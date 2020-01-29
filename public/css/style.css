@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 64px 100vh;
+    grid-template-areas: "nav" "main";
+  }
+
+nav{
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    padding: 0 24px;
+    border-bottom: 1px solid black;
+}
+
+.img-cart{
+    width: 15%;;
+    margin: auto 0 auto auto;
+}
+
+main{
+    grid-area: main;
+    margin: 0 16px;;
+}

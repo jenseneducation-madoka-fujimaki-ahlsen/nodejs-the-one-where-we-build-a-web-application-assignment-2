@@ -7,6 +7,7 @@ const endpoints = require('./helpers/endpoints');
 const { handleError } = require('./helpers/error')
 const port = process.env.PORT || 8000;
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
