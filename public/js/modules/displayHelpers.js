@@ -29,7 +29,7 @@ const updateButtonStyle = async () => {
     if (cartProducts.length !== 0) {
         btnList.forEach(btn => {
             if (cartProducts.some(product => product.id === btn.getAttribute('data-name'))) {
-             btn.style.background = "rgba(255,0,0,0.6)"; 
+             btn.style.background = "rgb(255, 96, 96)"; 
              btn.innerHTML="Remove from cart";   
              btn.removeEventListener('click', insertProductInCart);
              btn.addEventListener('click', removeProductFromCart);

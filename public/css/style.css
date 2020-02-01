@@ -39,7 +39,7 @@ h1 {
     position: absolute;
     right: 15px;
     top: -13px;
-    color: rgb(12, 97, 226);
+    color: rgb(255, 96, 96);
     font-weight: 900;
 }
 
@@ -92,10 +92,6 @@ main p {
     background-color: white;
 }
 
-.product-container__txt{
-
-}
-
 .product-container__txt p{
   margin: 4px;
 }
@@ -118,6 +114,7 @@ main p {
     cursor: pointer;
     outline: none;
     width: 40%;
+    font-size: 12px;
 }
 
 @media (min-width: 576px) {
