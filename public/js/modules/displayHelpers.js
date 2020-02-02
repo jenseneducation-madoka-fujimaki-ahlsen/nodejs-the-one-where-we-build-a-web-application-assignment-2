@@ -1,6 +1,6 @@
 const cartBaseURL = 'http://localhost:8000/api/cart';
 let cartProducts;
-let cartProductNum = document.querySelector(".cartProductNum");
+let cartProductTotal = document.querySelector(".cartProductTotal");
 
 // get the shopping cart with all the added products ----------------------------------------
 const getCartWithProducts = async () => {
@@ -13,13 +13,13 @@ const getCartWithProducts = async () => {
     });
 }
 
-const displayCartProductsNum = async  () => {
+const displayCartProductsTotal = async  () => {
     await getCartWithProducts();
-    cartProductNum.innerHTML = cartProducts.length;
+    cartProductTotal.innerHTML = cartProducts.length;
     if(cartProducts.length === 10){
-        cartProductNum.style.right = "10px";
+        cartProductTotal.style.right = "10px";
     }else{
-        cartProductNum.style.right = "15px";
+        cartProductTotal.style.right = "15px";
     }
 }
 
@@ -62,7 +62,7 @@ const insertProductInCart = async (event) => {
     }).then((data) => {
         console.log(data);   
     }); 
-    await displayCartProductsNum(); 
+    await displayCartProductsTotal(); 
     await updateButtonStyle(); 
 }
 
@@ -75,8 +75,8 @@ const removeProductFromCart = async (event) => {
     }).then((data) => {
         console.log(data);   
     });
-    await displayCartProductsNum(); 
+    await displayCartProductsTotal(); 
     await updateButtonStyle(); 
 }
 
-export {cartBaseURL, displayCartProductsNum, insertProductInCart, removeProductFromCart, getCartWithProducts, updateButtonStyle};
+export {cartBaseURL, displayCartProductsTotal, insertProductInCart, removeProductFromCart, getCartWithProducts, updateButtonStyle};
