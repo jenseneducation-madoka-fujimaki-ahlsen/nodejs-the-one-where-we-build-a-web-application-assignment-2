@@ -3,7 +3,6 @@ let productContainer = document.querySelector(".product-container");
 let productTotal = document.querySelector(".productTotal");
 
 // get all products and display ------------------------------------------------------------------
-    }).then((data) => { 
 
 
 const displayProducts = async (products) => {
