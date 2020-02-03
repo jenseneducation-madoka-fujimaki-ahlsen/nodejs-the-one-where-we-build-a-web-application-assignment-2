@@ -1,4 +1,4 @@
-import {cartBaseURL, getCartWithProducts} from './modules/displayHelpers.js';
+import {debounce, cartBaseURL, getCartWithProducts} from './modules/displayHelpers.js';
 let cartProductsContainer = document.querySelector(".cart-products-container");
 let productId ;
 
@@ -16,7 +16,7 @@ let productId ;
    btnList.forEach(btn => {
     btn.style.background = "rgba(255,0,0,0.6)"; 
     btn.innerHTML="Remove from cart";   
-    btn.addEventListener('click', updateButtonMsg);
+    btn.addEventListener('click', debounce(updateButtonMsg, 250));
    })
    if(cartProducts.length === 0){
     cartProductsContainer.innerHTML = "You have no product in your cart."
@@ -30,7 +30,7 @@ const updateButtonMsg = event => {
     productId = event.target.dataset.id;
     let btn = document.querySelectorAll(`[data-id='${productId}']`)
     btn[0].classList.add('animated');
-    setTimeout(removeProductFromCart, 700);
+    setTimeout(removeProductFromCart, 600);
 };
 
 const removeProductFromCart =  () => {
