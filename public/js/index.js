@@ -1,17 +1,10 @@
-import { displayCartProductsTotal, insertProductInCart, updateButtonStyle} from './modules/displayHelpers.js';
+import { getProducts, displayCartProductsTotal, insertProductInCart, updateButtonStyle} from './modules/displayHelpers.js';
 let productContainer = document.querySelector(".product-container");
 let productTotal = document.querySelector(".productTotal");
-const productsBaseURL = 'http://localhost:8000/api/products';
 
 // get all products and display ------------------------------------------------------------------
-const getProducts = async () => {
-    await fetch(productsBaseURL, { method: 'GET' })
-    .then((response) => {
-        return response.json();
     }).then((data) => { 
-        displayProducts(data);
-    });
-}
+
 
 const displayProducts = async (products) => {
     productTotal.innerHTML += products.length;
@@ -28,4 +21,4 @@ const displayProducts = async (products) => {
     await updateButtonStyle();
 }
 
-window.onload = getProducts; 
+window.onload = getProducts(displayProducts)

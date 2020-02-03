@@ -1,6 +1,17 @@
 const cartBaseURL = 'http://localhost:8000/api/cart';
+const productsBaseURL = 'http://localhost:8000/api/products';
 let cartProducts;
 let cartProductTotal = document.querySelector(".cartProductTotal");
+
+// get all products --------------------------------
+const getProducts = async (displayProducts) => {
+    return await fetch(productsBaseURL, { method: 'GET' })
+    .then((response) => {
+        return response.json();
+    }).then((data) => { 
+        displayProducts(data);
+    });
+}
 
 // get the shopping cart with all the added products ----------------------------------------
 const getCartWithProducts = async () => {
@@ -79,4 +90,4 @@ const removeProductFromCart = async (event) => {
     await updateButtonStyle(); 
 }
 
-export {cartBaseURL, displayCartProductsTotal, insertProductInCart, removeProductFromCart, getCartWithProducts, updateButtonStyle};
+export {cartBaseURL, displayCartProductsTotal, insertProductInCart, removeProductFromCart, getCartWithProducts, updateButtonStyle, getProducts};

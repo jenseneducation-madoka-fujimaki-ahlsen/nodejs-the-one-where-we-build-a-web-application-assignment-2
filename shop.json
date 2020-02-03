@@ -61,9 +61,5 @@
       "imageUrl": "https://placeimg.com/640/480/tech?t=1579876696471"
     }
   ],
-  "cart": [
-    {
-      "productId": "71e3e427-5a8b-424f-a1f6-75193572a3f3"
-    }
-  ]
+  "cart": []
 }
